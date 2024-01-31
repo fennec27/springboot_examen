@@ -3,7 +3,7 @@ package ch.hearc.masrad.springboot.examen.service;
 import ch.hearc.masrad.springboot.examen.dto.PhoneResponseDto;
 import ch.hearc.masrad.springboot.examen.repository.PhoneRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PhoneService {
 
     private final PhoneRepository phoneRepository;

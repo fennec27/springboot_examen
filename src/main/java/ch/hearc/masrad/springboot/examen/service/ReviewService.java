@@ -9,14 +9,14 @@ import ch.hearc.masrad.springboot.examen.repository.ConsumerRepository;
 import ch.hearc.masrad.springboot.examen.repository.PhoneRepository;
 import ch.hearc.masrad.springboot.examen.repository.ReviewRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 @Transactional
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReviewService {
 
     private final ConsumerRepository consumerRepository;

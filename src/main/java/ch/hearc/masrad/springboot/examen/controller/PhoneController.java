@@ -2,7 +2,7 @@ package ch.hearc.masrad.springboot.examen.controller;
 
 import ch.hearc.masrad.springboot.examen.dto.PhoneResponseDto;
 import ch.hearc.masrad.springboot.examen.service.PhoneService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("phone")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PhoneController {
 
     private final PhoneService phoneService;

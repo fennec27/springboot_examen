@@ -3,7 +3,7 @@ package ch.hearc.masrad.springboot.examen.controller;
 import ch.hearc.masrad.springboot.examen.dto.ConsumerCreationDto;
 import ch.hearc.masrad.springboot.examen.dto.ConsumerResponseDto;
 import ch.hearc.masrad.springboot.examen.service.ConsumerService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("consumer")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ConsumerController {
 
     private final ConsumerService consumerService;

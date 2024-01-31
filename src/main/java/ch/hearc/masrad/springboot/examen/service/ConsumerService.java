@@ -5,7 +5,7 @@ import ch.hearc.masrad.springboot.examen.dto.ConsumerResponseDto;
 import ch.hearc.masrad.springboot.examen.entity.Consumer;
 import ch.hearc.masrad.springboot.examen.repository.ConsumerRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ConsumerService {
 
     private final ConsumerRepository consumerRepository;
