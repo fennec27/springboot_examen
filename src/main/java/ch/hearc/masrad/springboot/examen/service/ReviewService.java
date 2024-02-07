@@ -42,4 +42,8 @@ public class ReviewService {
         return Optional.of(ReviewResponseDto.fromEntity(review));
     }
 
+    public Integer getCountForManufacturer(String manufacturer) {
+        return reviewRepository.getCountByPhoneManufacturer(manufacturer);
+    }
+
 }

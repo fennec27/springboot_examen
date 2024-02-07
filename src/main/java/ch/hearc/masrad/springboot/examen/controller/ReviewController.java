@@ -5,10 +5,7 @@ import ch.hearc.masrad.springboot.examen.dto.ReviewResponseDto;
 import ch.hearc.masrad.springboot.examen.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
@@ -29,6 +26,11 @@ public class ReviewController {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Consumer or phone not found");
         }
+    }
+
+    @GetMapping(value = "", produces = "application/json")
+    public Integer getCountForManufacturer(@RequestParam String manufacturer) {
+        return reviewService.getCountForManufacturer(manufacturer);
     }
 
 }
