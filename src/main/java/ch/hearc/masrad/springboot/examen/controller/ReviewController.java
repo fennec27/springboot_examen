@@ -5,6 +5,7 @@ import ch.hearc.masrad.springboot.examen.dto.ReviewResponseDto;
 import ch.hearc.masrad.springboot.examen.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -28,9 +29,18 @@ public class ReviewController {
         }
     }
 
-    @GetMapping(value = "", produces = "application/json")
+    @GetMapping(value = "count", produces = "application/json")
     public Integer getCountForManufacturer(@RequestParam String manufacturer) {
         return reviewService.getCountForManufacturer(manufacturer);
+    }
+
+    @DeleteMapping(value = "{id}", produces = "application/json")
+    public ResponseEntity<?> delete(@PathVariable Long id){
+        if (reviewService.delete(id)) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

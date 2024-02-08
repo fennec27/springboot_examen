@@ -5,6 +5,7 @@ import ch.hearc.masrad.springboot.examen.dto.ConsumerResponseDto;
 import ch.hearc.masrad.springboot.examen.service.ConsumerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -37,6 +38,16 @@ public class ConsumerController {
     @GetMapping(value = "", produces = "application/json")
     public List<ConsumerResponseDto> getAll() {
         return consumerService.getAll();
+    }
+
+
+    @DeleteMapping(value="{id}/review", produces = "application/json")
+    public ResponseEntity<?> deleteAllReview(@PathVariable Long id){
+        if (consumerService.DeleteAllReview(id)) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

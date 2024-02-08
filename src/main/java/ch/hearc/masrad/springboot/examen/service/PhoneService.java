@@ -7,6 +7,7 @@ import ch.hearc.masrad.springboot.examen.repository.PhoneRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,11 +34,15 @@ public class PhoneService {
             return Optional.empty();
         }
 
-        Phone phone = new Phone();
-        phone.setManufacturer(dto.getManufacturer());
-        phone.setModel(dto.getModel());
+        if (StringUtils.hasLength(dto.getManufacturer())) {
+            phoneOptional.get().setManufacturer(dto.getManufacturer());
+        }
+        if (StringUtils.hasLength(dto.getModel())) {
+            phoneOptional.get().setModel(dto.getModel());
+        }
 
-        return Optional.of(PhoneResponseDto.fromEntity(phone));
+        return Optional.of(PhoneResponseDto.fromEntity(phoneRepository.save(phoneOptional.get())));
+
     }
 
 }
