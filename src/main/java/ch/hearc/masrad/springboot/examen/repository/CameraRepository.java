@@ -9,7 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CameraRepository extends JpaRepository<Review, Long> {
 
-    @Query("select count(review) from Review review where review.phone.manufacturer = :manufacturer")
-    Integer getCountByPhoneManufacturer(@Param("manufacturer") String manufacturer);
-
 }

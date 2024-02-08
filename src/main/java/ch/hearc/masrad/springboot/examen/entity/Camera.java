@@ -23,9 +23,9 @@ public class Camera {
 
     @ManyToMany
     @JoinTable( name = "camera_phone",
-            joinColumns = @JoinColumn(name = "camera_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "phone_id", referencedColumnName = "id"))
-    private List<Camera> cameras = new ArrayList<>();
+            joinColumns = @JoinColumn(name = "phone_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "camera_id", referencedColumnName = "id"))
+    private List<Phone> phones = new ArrayList<>();
 
 
     public Camera(String name, Long resolution) {

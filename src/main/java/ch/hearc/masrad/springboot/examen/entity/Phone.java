@@ -21,13 +21,10 @@ public class Phone {
     private String manufacturer;
     private String model;
 
-    //@ManyToMany(mappedBy = "cameras")
-    //private List<Camera> cameras new ArrayList<>();
-
     @OneToMany(mappedBy="phone")
     private List<Review> reviews = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "cameras")
+    @ManyToMany(mappedBy = "phones")
     private List<Camera> cameras = new ArrayList<>();
 
     public Phone(String manufacturer, String model) {

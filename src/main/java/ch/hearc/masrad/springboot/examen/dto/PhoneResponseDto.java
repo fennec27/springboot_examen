@@ -1,10 +1,13 @@
 package ch.hearc.masrad.springboot.examen.dto;
 
+import ch.hearc.masrad.springboot.examen.entity.Camera;
 import ch.hearc.masrad.springboot.examen.entity.Phone;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter

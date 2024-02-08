@@ -2,6 +2,7 @@ package ch.hearc.masrad.springboot.examen.dto;
 
 import ch.hearc.masrad.springboot.examen.entity.Consumer;
 import ch.hearc.masrad.springboot.examen.entity.Review;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,5 +24,6 @@ public class ConsumerResponseDto {
         return new ConsumerResponseDto(consumer.getId(), consumer.getName(), consumer.getEmail(),
                 consumer.getReviews().size(), consumer.getReviews());
     }
+    //, consumer.getReviews()
 
 }
